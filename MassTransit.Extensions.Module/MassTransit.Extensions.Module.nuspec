@@ -7,7 +7,7 @@
     <authors>laget.se</authors>
     <owners>laget.se</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Autofac inspired `Module` structure for `MassTransit` that is used by calling `.RegisterModule<T>()` in `.AddMassTransit`.</description>
+    <description>Autofac inspired `Module` structure for `MassTransit`.</description>
     <summary></summary>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://laget.se</projectUrl>
