@@ -33,3 +33,16 @@ public class Program
     }
 }
 ```
+
+### Module
+```c#
+    public class OrderModule : Module
+    {
+        public void Configure(IBusRegistrationConfigurator configurator)
+        {
+            configurator.AddConsumer<AddedConsumer>().Endpoint(config => config.InstanceId = "Order.Service");
+            configurator.AddConsumer<UpdatedConsumer>().Endpoint(config => config.InstanceId = "Order.Service");
+            configurator.AddConsumer<DeletedConsumer>().Endpoint(config => config.InstanceId = "Order.Service");
+        }
+    }
+```
