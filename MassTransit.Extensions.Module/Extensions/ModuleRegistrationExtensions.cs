@@ -4,7 +4,7 @@ namespace MassTransit.Extensions.Module.Extensions
 {
     public static class ModuleRegistrationExtensions
     {
-        public static IBusRegistrationConfigurator RegisterModule<TModule>(this IBusRegistrationConfigurator configurator) where TModule : IModule, new()
+        public static IBusRegistrationConfigurator RegisterModule<TModule>(this IBusRegistrationConfigurator configurator) where TModule : Module, new()
         {
             if (configurator == null)
             {

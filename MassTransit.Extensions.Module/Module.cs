@@ -2,12 +2,7 @@
 
 namespace MassTransit.Extensions.Module
 {
-    public interface IModule
-    {
-        void Configure(IBusRegistrationConfigurator configurator);
-    }
-
-    public abstract class Module : IModule
+    public abstract class Module
     {
         public void Configure(IBusRegistrationConfigurator configurator)
         {
