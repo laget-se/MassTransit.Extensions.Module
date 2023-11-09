@@ -2,6 +2,7 @@
 Autofac inspired `Module` structure for `MassTransit` that is used by calling `.RegisterModule<T>()` in `.AddMassTransit`.
 
 ## Usage
+### HostBuilder
 ```c#
 public class Program
 {
