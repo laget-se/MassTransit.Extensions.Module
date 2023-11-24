@@ -39,7 +39,7 @@ public class Program
 ```c#
     public class OrderModule : Module
     {
-        public void Configure(IBusRegistrationConfigurator configurator)
+        public override void Configure(IBusRegistrationConfigurator configurator)
         {
             configurator.AddConsumer<AddedConsumer>().Endpoint(config => config.InstanceId = "Order.Service");
             configurator.AddConsumer<UpdatedConsumer>().Endpoint(config => config.InstanceId = "Order.Service");

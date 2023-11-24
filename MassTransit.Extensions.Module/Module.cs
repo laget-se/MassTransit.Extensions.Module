@@ -2,6 +2,6 @@
 {
     public abstract class Module
     {
-        protected abstract void Configure(IBusRegistrationConfigurator configurator);
+        public abstract void Configure(IBusRegistrationConfigurator configurator);
     }
 }
