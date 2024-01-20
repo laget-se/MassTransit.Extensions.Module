@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-dotnet@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 8.0.x
     - run: dotnet restore
-    - run: dotnet build --configuration Release MassTransit.Extensions.Module/MassTransit.Extensions.Module.csproj
+    - run: dotnet build --configuration Release MassTransit.Extensions.Module/MassTransit.Extensions.Module.csproj -p:Version=${{vars.VERSION}}.${{github.run_number}}
     - run: dotnet pack --configuration Release MassTransit.Extensions.Module/MassTransit.Extensions.Module.csproj --no-build -p:Version=${{vars.VERSION}}.${{github.run_number}} -p:PackageVersion=${{vars.VERSION}}.${{github.run_number}} -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -p:NuspecFile=MassTransit.Extensions.Module.nuspec
     - run: dotnet nuget push MassTransit.Extensions.Module/bin/Release/laget.MassTransit.Extensions.Module.${{vars.VERSION}}.${{github.run_number}}.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
